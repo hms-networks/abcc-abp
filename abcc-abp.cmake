@@ -4,7 +4,8 @@ if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.10.0")
    include_guard(GLOBAL)
 endif()
 
-# Complete list of source (.h) files inside the Anybus Protocol. Not used. 
+# Complete list of header (.h) files inside the Anybus Protocol. This is
+# only used to arrange the files correctly for display in IDEs. 
 set(abcc_abp_INCS
    ${ABCC_ABP_DIR}/inc/abp.h
    ${ABCC_ABP_DIR}/inc/abp_add.h
@@ -50,18 +51,17 @@ set(abcc_abp_INCS
 )
 
 # Creating a library target containing the Anybus Protocol.
-add_library(abcc_abp INTERFACE)
+# (The header files are added only to keep the file and directory tree structure.)
+add_library(abcc_abp INTERFACE ${abcc_abp_INCS})
 
 # Keeping the file and directory tree structure of the Anybus Protocol when 
 # generating IDE projects.
 source_group(TREE ${ABCC_ABP_DIR} PREFIX "abcc-abp" FILES ${abcc_abp_INCS})
 
-# Directories inside the Anybus Protocol containing include (.h) files to be 
+# Directories inside the Anybus Protocol containing header (.h) files to be 
 # externally accessible created.
-list(APPEND ABCC_ABP_INCLUDE_DIRS 
-   ${ABCC_ABP_DIR}/inc
-)
+set(ABCC_ABP_INCLUDE_DIRS ${ABCC_ABP_DIR}/inc)
 
-# Adding all the Anybus Protocol related include (.h) files to the user host 
+# Adding all the Anybus Protocol related header (.h) files to the user host 
 # Anybus Protocol library target.
 target_include_directories(abcc_abp INTERFACE ${ABCC_ABP_INCLUDE_DIRS})
