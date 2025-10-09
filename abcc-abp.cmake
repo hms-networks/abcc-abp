@@ -51,8 +51,9 @@ set(abcc_abp_INCS
 )
 
 # Creating a library target containing the Anybus Protocol.
-# (The header files are added only to keep the file and directory tree structure.)
-add_library(abcc_abp INTERFACE ${abcc_abp_INCS})
+add_library(abcc_abp INTERFACE)
+# The header files are added only to keep the file and directory tree structure.
+target_sources(abcc_abp INTERFACE ${abcc_abp_INCS})
 
 # Keeping the file and directory tree structure of the Anybus Protocol when 
 # generating IDE projects.
