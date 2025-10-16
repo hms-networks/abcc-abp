@@ -52,7 +52,16 @@ set(abcc_abp_INCS
 
 # Creating a library target containing the Anybus Protocol.
 # (The header files are added only to keep the file and directory tree structure.)
-add_library(abcc_abp INTERFACE ${abcc_abp_INCS})
+if(CMAKE_VERSION VERSION_GREATER_EQUAL "3.19")
+    add_library(abcc_abp INTERFACE ${abcc_abp_INCS})
+else()
+    # CMake versions prior to v3.19 do not allow Interface Library targets with
+    # source files. Please note that abcc-abp will not be displayed as its own
+    # target in IDE's if cmake version < 3.19 is used.
+    add_library(abcc_abp INTERFACE)
+    # Fallback to target_sources.
+    target_sources(abcc_abp INTERFACE ${abcc_abp_INCS})
+endif()
 
 # Keeping the file and directory tree structure of the Anybus Protocol when 
 # generating IDE projects.
