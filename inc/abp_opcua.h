@@ -36,6 +36,8 @@
 #define ABP_OPCUA_IA_LIMITS                  7
 #define ABP_OPCUA_IA_APPLICATION_MODELS      8
 #define ABP_OPCUA_IA_STATUS                  9
+#define ABP_OPCUA_IA_MAX_SESSION_TIMEOUT     10
+#define ABP_OPCUA_IA_MAX_SEC_TOKEN_LIFETIME  11
 
 /*------------------------------------------------------------------------------
 ** The data size of the OPC UA instance attributes
@@ -50,6 +52,8 @@
 #define ABP_OPCUA_IA_LIMITS_DS                   ( ABP_UINT16_SIZEOF + ABP_UINT32_SIZEOF + ABP_UINT32_SIZEOF + ABP_UINT32_SIZEOF )
 #define ABP_OPCUA_IA_APPLICATION_MODELS_MAX_DS   ( ABP_OPCUA_IA_APPLICATIONS_MODELS_MAX * ( ABP_UINT8_SIZEOF + ABP_UINT8_SIZEOF + ABP_UINT16_SIZEOF ) )
 #define ABP_OPCUA_IA_STATUS_DS                   ( ABP_ENUM_SIZEOF + ABP_UINT8_SIZEOF )
+#define ABP_OPCUA_IA_MAX_SESSION_TIMEOUT_DS      ( ABP_UINT32_SIZEOF )
+#define ABP_OPCUA_IA_MAX_SEC_TOKEN_LIFETIME_DS   ( ABP_UINT32_SIZEOF )
 
 /*------------------------------------------------------------------------------
 ** Values of Model attribute

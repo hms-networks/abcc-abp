@@ -109,6 +109,8 @@
 #define ABP_ECT_IA_DEF_TXPDO_ASSIGN       28
 #define ABP_ECT_IA_DEF_RXPDO_ASSIGN       29
 #define ABP_ECT_IA_SII_COE_DETAILS        30
+#define ABP_ECT_IA_ERR_REG_OBJ_ENABLE     31
+#define ABP_ECT_IA_RESERVED_OBJ_ENABLE    32
 
 /*------------------------------------------------------------------------------
 **
@@ -148,6 +150,8 @@
 #define ABP_ECT_IA_DEF_TXPDO_ASSIGN_MAX_DS      ( ABP_UINT16_SIZEOF * 64 )
 #define ABP_ECT_IA_DEF_RXPDO_ASSIGN_MAX_DS      ( ABP_UINT16_SIZEOF * 64 )
 #define ABP_ECT_IA_SII_COE_DETAILS_DS           ABP_UINT8_SIZEOF
+#define ABP_ECT_IA_ERR_REG_OBJ_ENABLE_DS        ABP_BOOL_SIZEOF
+#define ABP_ECT_IA_RESERVED_OBJ_ENABLE_DS       ABP_BOOL_SIZEOF
 
 
 /*------------------------------------------------------------------------------
