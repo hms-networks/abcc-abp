@@ -82,6 +82,7 @@
 #define ABP_ETN_IA_ENABLE_DHCP_CLIENT          24
 #define ABP_ETN_IA_ENABLE_WEBDAV               25
 #define ABP_ETN_IA_PASSWORD_CONFIGURATION      26
+#define ABP_ETN_IA_ENABLE_NTP_EXTENDED         27
 
 
 /*------------------------------------------------------------------------------
@@ -116,6 +117,7 @@
 #define ABP_ETN_IA_ENABLE_DHCP_CLIENT_DS           ABP_BOOL_SIZEOF
 #define ABP_ETN_IA_ENABLE_WEBDAV_DS                ABP_BOOL_SIZEOF
 #define ABP_ETN_IA_PASSWORD_CONFIGURATION_DS       ( 2 * ABP_UINT8_SIZEOF )
+#define ABP_ETN_IA_ENABLE_NTP_EXTENDED_DS          ABP_BOOL_SIZEOF
 
 
 /*------------------------------------------------------------------------------
